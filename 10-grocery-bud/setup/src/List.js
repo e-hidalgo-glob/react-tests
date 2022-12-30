@@ -1,7 +1,13 @@
-import React from 'react'
-import { FaEdit, FaTrash } from 'react-icons/fa'
-const List = () => {
-  return <h2>list component</h2>
-}
+import React from "react";
+import ListItem from "./ListItem";
+const List = ({ items, removeItem, editItem }) => {
+  return (
+    <div className="grocery-list">
+      {items.map((item) => (
+        <ListItem item={item} removeItem={removeItem} editItem={editItem} />
+      ))}
+    </div>
+  );
+};
 
-export default List
+export default List;
