@@ -1,7 +1,6 @@
 import React from "react";
 
 const List = ({ peopleBirthdays }) => {
-
   const generateListItem = (birthday) => {
     const { id, name, age, image } = birthday;
     return (
@@ -16,11 +15,7 @@ const List = ({ peopleBirthdays }) => {
   };
 
   const items = peopleBirthdays.map((bday) => generateListItem(bday));
-  return (
-    <>
-      {items}
-    </>
-  );
+  return <>{items}</>;
 };
 
 export default List;
