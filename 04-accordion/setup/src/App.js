@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import data from "./data";
 import SingleQuestion from "./Question";
 function App() {
-  const [questions, setQuestions] = useState(data);
+  const [questions,] = useState(data);
   const questionList = questions.map((question) => (
     <SingleQuestion key={question.id} {...question} />
   ));
