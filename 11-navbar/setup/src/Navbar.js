@@ -10,6 +10,7 @@ const Navbar = () => {
   const linksContainerRef = useRef(null);
   const linksRef = useRef(null);
   const toggleLinks = () => setShowLinks(!showLinks);
+
   const handleLinksStyles = () => {
     const linksHeight = linksRef.current.getBoundingClientRect().height;
     if (showLinks) {
