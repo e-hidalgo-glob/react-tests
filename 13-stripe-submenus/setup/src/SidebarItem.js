@@ -6,7 +6,7 @@ const SidebarItem = ({ item }) => {
     <SidebarLink link={link} index={index} />
   ));
   return (
-    <article >
+    <article>
       <h4>{page}</h4>
       <div className="sidebar-sublinks">{linksList}</div>
     </article>
