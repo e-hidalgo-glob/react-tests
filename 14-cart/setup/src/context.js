@@ -1,6 +1,6 @@
 import React, { useState, useContext, useReducer, useEffect } from "react";
 import cartItems from "./data";
-import ApiConector from "./network/api-connector";
+import ApiConnector from "./network/api-connector";
 import reducer from "./reducer";
 const AppContext = React.createContext();
 
@@ -24,7 +24,7 @@ const AppProvider = ({ children }) => {
 
   const fetchData = async () => {
     dispatch({ type: "LOADING" });
-    const connector = new ApiConector();
+    const connector = new ApiConnector();
     const cart = await connector.fetchData();
     dispatch({ type: "DISPLAY_ITEMS", payload: cart });
   };

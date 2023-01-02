@@ -1,4 +1,4 @@
-class ApiConector {
+class ApiConnector {
   url = "https://course-api.com/react-useReducer-cart-project";
 
   fetchData = async () => {
@@ -6,4 +6,4 @@ class ApiConector {
     return await response.json();
   };
 }
-export default ApiConector;
+export default ApiConnector;

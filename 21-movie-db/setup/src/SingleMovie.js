@@ -1,9 +1,20 @@
-import React, { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
-import { API_ENDPOINT } from './context'
-
+import React from "react";
+import { useParams } from "react-router-dom";
+import ErrorPage from "./components/ErrorPage";
+import SingleMovieInfo from "./components/SingleMovieInfo";
+import useFetch from "./useFetch";
 const SingleMovie = () => {
-  return <h2>single movie</h2>
-}
+  const { id } = useParams();
+  const { isLoading, error, data: movie } = useFetch(`&i=${id}`);
 
-export default SingleMovie
+  if (isLoading) {
+    return <div className="loading"></div>;
+  }
+  return error.show ? (
+    <ErrorPage error={error} />
+  ) : (
+    <SingleMovieInfo movie={movie} />
+  );
+};
+
+export default SingleMovie;
